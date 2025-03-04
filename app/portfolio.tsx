@@ -3,8 +3,9 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ChevronRight, Github, Linkedin } from "lucide-react";
+import { ChevronRight, Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Portfolio() {
   const [selectedSection, setSelectedSection] = useState("About");
@@ -16,19 +17,38 @@ export default function Portfolio() {
       case "About":
         return (
           <div>
-            <h2 className="text-2xl font-bold">About Me</h2>
-            <p className="mt-2 text-gray-500">
+            <p className="mt-2 text-white">
               I am Shivam Vishwakarma, a passionate full-stack developer with
               expertise in Node.js, React, Next.js, and MongoDB. I have hands-on
               experience in creating robust, scalable web applications and
               thrive in solving challenging problems with innovative solutions.
             </p>
+            <div className="flex flex-row items-center space-x-24">
+              <Image
+                className="rounded-[60px] glow mt-4"
+                src="/shivam.jpeg"
+                alt="shivam"
+                width={350}
+                height={20}
+              />
+              {/* social links */}
+              <div className="flex flex-row space-x-4 items-center">
+                <Link href={"https://github.com/shivamvishwakarm"}>
+                  <Github className="w-6 h-6 text-black text-glow" />
+                </Link>
+                <Link href={"https://www.linkedin.com/in/shivamvishwakarma-/"}>
+                  <Linkedin className="w-6 h-6 text-black text-glow" />
+                </Link>
+                <Link href={"https://x.com/shivam_visss"}>
+                  <Twitter className="w-6 h-6 text-black text-glow" />
+                </Link>
+              </div>
+            </div>
           </div>
         );
       case "Skills":
         return (
           <div>
-            <h2 className="text-2xl font-bold">Skills</h2>
             <ul className="mt-4 grid grid-cols-2 gap-4">
               {[
                 "JavaScript",
@@ -51,43 +71,39 @@ export default function Portfolio() {
         );
       case "Projects":
         return (
-          <div>
-            <h2 className="text-2xl font-bold">Projects</h2>
-            <div className="mt-4 grid gap-4 md:grid-cols-2">
-              {[
-                {
-                  title: "Student Result Portal",
-                  description:
-                    "A Vercel-hosted platform to search and view results efficiently.",
-                  link: "https://result-portal-kappa.vercel.app/",
-                },
-                // {
-                //   title: "Geo-location Coupons",
-                //   description:
-                //     "A platform for location-based coupon redemption using Next.js and Express.",
-                //   link: "https://geo-coupons.example.com",
-                // },
-              ].map((project) => (
-                <Card key={project.title} className="hover:shadow-lg">
-                  <CardContent>
-                    <h3 className="text-lg font-bold">{project.title}</h3>
-                    <p className="mt-1 text-gray-500">{project.description}</p>
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      className="mt-2 text-teal-600">
-                      Visit Project <ChevronRight className="ml-1" size={16} />
-                    </Link>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {[
+              {
+                title: "Student Result Portal",
+                description:
+                  "A Vercel-hosted platform to search and view results efficiently.",
+                link: "https://result-portal-kappa.vercel.app/",
+              },
+              // {
+              //   title: "Geo-location Coupons",
+              //   description:
+              //     "A platform for location-based coupon redemption using Next.js and Express.",
+              //   link: "https://geo-coupons.example.com",
+              // },
+            ].map((project) => (
+              <Card key={project.title} className="hover:shadow-lg">
+                <CardContent>
+                  <h3 className="text-lg font-bold">{project.title}</h3>
+                  <p className="mt-1 text-gray-500">{project.description}</p>
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    className="mt-2 text-teal-600">
+                    Visit Project <ChevronRight className="ml-1" size={16} />
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         );
       case "Contact":
         return (
           <div>
-            <h2 className="text-2xl font-bold">Contact</h2>
             <p className="mt-2">Feel free to reach out to me through:</p>
             <div className="mt-4 flex gap-4">
               <Link href="https://github.com/shivamvishwakarm" target="_blank">
@@ -107,7 +123,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#240750] to-[#57A6A1] text-white">
+    <div className="min-h-screen bg-linear-to-b from-[#BD9AF4] to-[#70594C] text-white">
       <header className="p-4 text-center">
         <h1 className="text-3xl font-bold">Shivam Vishwakarma</h1>
         <p className="text-gray-300">
@@ -129,11 +145,16 @@ export default function Portfolio() {
             </Button>
           ))}
         </motion.nav>
-
-        <section className="mt-8">{renderSectionContent()}</section>
+        <div className="mx-48">
+          <h2 className="relative text-2xl font-bold w-48 pb-5 text-white ">
+            {selectedSection}
+            <span className="absolute left-0 bottom-0 h-[2px] w-full bg-white origin-bottom-left transform rotate-[-3deg]"></span>
+          </h2>
+          <section className="mt-8">{renderSectionContent()}</section>
+        </div>
       </main>
 
-      <footer className="mt-12 p-4 text-center text-sm text-gray-400">
+      <footer className="mt-12 p-4 text-center text-sm text-white font-black">
         &copy; 2025 Shivam Vishwakarma. All rights reserved.
       </footer>
     </div>

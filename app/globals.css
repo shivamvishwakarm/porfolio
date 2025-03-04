@@ -124,3 +124,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.glow {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.text-glow{
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
