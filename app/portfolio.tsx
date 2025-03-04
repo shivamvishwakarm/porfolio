@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronRight, Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 
 export default function Portfolio() {
   const [selectedSection, setSelectedSection] = useState("About");
@@ -23,14 +23,14 @@ export default function Portfolio() {
               experience in creating robust, scalable web applications and
               thrive in solving challenging problems with innovative solutions.
             </p>
-            <div className="flex flex-row items-center space-x-24">
-              {/* <Image
+            <div className="flex md:flex-row flex-col items-center space-x-24 space-y-4">
+              <Image
                 className="rounded-[60px] glow mt-4"
                 src="/shivam.jpeg"
                 alt="shivam"
                 width={350}
                 height={20}
-              /> */}
+              />
               {/* social links */}
               <div className="flex flex-row space-x-4 items-center">
                 <Link href={"https://github.com/shivamvishwakarm"}>
@@ -145,7 +145,7 @@ export default function Portfolio() {
             </Button>
           ))}
         </motion.nav>
-        <div className="mx-48">
+        <div className="lg:mx-48 mx-4">
           <h2 className="relative text-2xl font-bold w-48 pb-5 text-white ">
             {selectedSection}
             <span className="absolute left-0 bottom-0 h-[2px] w-full bg-white origin-bottom-left transform rotate-[-3deg]"></span>
