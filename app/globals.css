@@ -133,3 +133,19 @@
 .text-glow{
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}
