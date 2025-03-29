@@ -30,12 +30,13 @@ const skillIcons = [
 function Skill() {
   return (
     <div className="">
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-3 grid-cols-2 gap-10">
         {skillIcons.map((skill, index) => (
           <div
             key={index}
-            className="flex text-black text-5xl  animate-floating items-center space-x-2">
-            {skill.icon}
+            className="flex text-black md:text-5xl text-4xl  animate-floating items-center space-x-2">
+            <p> {skill.icon}</p>
+
             <p className="mt-2 text-xl">{skill.name}</p>
           </div>
         ))}

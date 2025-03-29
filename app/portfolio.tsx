@@ -32,14 +32,12 @@ export default function Portfolio() {
     <div className="min-h-screen bg-linear-to-b from-[#BD9AF4] to-[#70594C] text-white">
       <header className="p-4 text-center">
         <h1 className="text-3xl font-bold">Shivam Vishwakarma</h1>
-        <p className="text-gray-300">
-          Full-Stack Developer | Freelancer | IT Enthusiast
-        </p>
+        <p className="text-gray-300">Full-Stack Developer / Freelancer</p>
       </header>
 
       <main className="container mx-auto px-4 py-8">
         <motion.nav
-          className="flex justify-center gap-4"
+          className="flex justify-center md:gap-4 gap-2"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}>
           {sections.map((section) => (
@@ -60,7 +58,7 @@ export default function Portfolio() {
         </div>
       </main>
 
-      <footer className="mt-12 p-4 text-center text-sm text-white font-black">
+      <footer className="mt-12 p-4 text-center text-sm text-white font-black bottom-0 ">
         &copy; 2025 Shivam Vishwakarma. All rights reserved.
       </footer>
     </div>

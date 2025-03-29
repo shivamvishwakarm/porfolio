@@ -46,8 +46,8 @@ export default function Contact() {
     <div className="flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
-        className=" border-2 border-dashed border-black  px-20 py-16 rounded-lg">
-        <div className="mb-6 flex items-end space-x-10">
+        className=" border-2 border-dashed border-black  md:px-20 px-4 md:py-16 py-4 rounded-lg">
+        <div className="mb-6 flex items-end md:space-x-10 space-x-4">
           <label
             htmlFor="name"
             className="block text-white text-sm font-medium mb-2">
@@ -62,7 +62,7 @@ export default function Contact() {
             className="w-full bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none py-2"
           />
         </div>
-        <div className="mb-6 flex items-end space-x-10">
+        <div className="mb-6 flex items-end md:space-x-10 space-x-4">
           <label
             htmlFor="email"
             className="block text-white text-sm font-medium mb-2">
@@ -77,7 +77,7 @@ export default function Contact() {
             className="w-full bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none py-2"
           />
         </div>
-        <div className="mb-6 flex items-end space-x-10">
+        <div className="mb-6 flex items-end md:space-x-10 space-x-4">
           <label
             htmlFor="subject"
             className="block text-white text-sm font-medium mb-2">
@@ -92,7 +92,7 @@ export default function Contact() {
             className="w-full bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none py-2"
           />
         </div>
-        <div className="mb-6 flex items-end space-x-10">
+        <div className="mb-6 flex items-end md:space-x-10 space-x-4">
           <label
             htmlFor="message"
             className="block text-white text-sm font-medium mb-2">
@@ -102,11 +102,13 @@ export default function Contact() {
             id="message"
             value={formData.message}
             onChange={handleChange}
-            // placeholder="Enter your message"
+            placeholder="Enter your message"
             className="w-full bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none py-2 h-24"
           />
         </div>
-        <button type="submit" className="float-right ">
+        <button
+          type="submit"
+          className="float-right pb-2 border-b border-yellow-200">
           Send →
         </button>
       </form>
